@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SENwise｜評估示範</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="shell">
+  <a class="brand" href="index.html"><span aria-hidden="true">✦</span> SENwise</a>
+  <nav aria-label="主選單"><a href="index.html">返回首頁</a></nav>
+</header>
+<main class="shell">
+  <section class="section demo" id="demo" aria-labelledby="demo-title">
+    <h1 id="demo-title">試一次評估流程</h1>
+    <p>選一項能力，完成兩個短任務，再看系統如何用操作紀錄描述表現。</p>
+    <div class="demo-layout">
+      <div class="demo-controls">
+        <label for="module">評估項目</label>
+        <select id="module">
+          <option value="instructions">理解與跟隨指令</option>
+          <option value="switching">專注與規則切換</option>
+        </select>
+        <p id="module-description"></p>
+        <p class="note">此示範使用規則分析操作紀錄。正式 AI 判讀及評估效度仍待驗證。</p>
+      </div>
+      <div class="demo-stage">
+        <div id="task">
+          <p class="task-step" id="task-step"></p>
+          <h3 id="task-title" tabindex="-1"></h3>
+          <p id="task-prompt"></p>
+          <div id="task-options" class="task-options" aria-label="任務圖卡"></div>
+          <p id="task-progress" role="status"></p>
+          <button class="primary" id="next-step" type="button" disabled>確認這一步</button>
+          <button class="example-link" id="undo-step" type="button" disabled>重選這一步</button>
+        </div>
+        <div id="task-report" hidden>
+          <h3 id="task-report-title" tabindex="-1">本次操作紀錄</h3>
+          <dl id="report-evidence"></dl>
+          <p id="report-summary"></p>
+          <p class="note">結果只描述這兩個示範任務的表現。</p>
+          <button class="primary" id="restart-demo" type="button">再試一次</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="assessment.js" defer></script>
+</body>
+</html>
